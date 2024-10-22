@@ -3,6 +3,7 @@ import { Stack } from "expo-router";
 export default function RootLayout() {
     return (
     <Stack screenOptions={{
+        headerShown: false,
         headerStyle: {
             backgroundColor: '#000'
         },
@@ -12,11 +13,10 @@ export default function RootLayout() {
             fontSize: 30
         }
     }}>
-        <Stack.Screen name="index" options={{title: 'Home', headerShown: true}}/>
-        <Stack.Screen name="about" options={{title: 'Sobre'}}/>
-        <Stack.Screen name="(aux)/termos" options={{title: 'Termos'}}/>
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="(aux)/termos" options={{title: 'Termos', headerShown: true}}/>
         <Stack.Screen name="auth/login" options={{title: 'Login'}}/>
-        <Stack.Screen name="profile/[id]"/>
+        <Stack.Screen name="profile/[id]"/>      
     </Stack>
     );
 }
